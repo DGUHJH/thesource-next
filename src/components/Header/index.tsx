@@ -74,7 +74,7 @@ export const Header = () => {
       </Styled.MenuContainer>
       <Styled.BannerContainer>
         <Styled.BannerWrapper>
-          <Image src={mainBanner} layout="responsive" />
+          <Image height={600} src={mainBanner} layout="fill" />
         </Styled.BannerWrapper>
         <Styled.SearchBarWrapper>
           <SearchBar />

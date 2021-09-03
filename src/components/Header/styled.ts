@@ -3,17 +3,18 @@ import styled from 'styled-components';
 
 export const Root = styled(Box)`
   width: 100%;
-  height: 57px;
-  border-bottom: 1px #ccc solid;
 `;
 
 export const MenuContainer = styled(Container)`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0;
+  &&& {
+    width: 100%;
+    height: 57px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px #ccc solid;
+    padding: 0;
+  }
 `;
 
 export const LeftContainer = styled(Box)`

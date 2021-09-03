@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import * as Styled from 'pages/styled';
+import * as Styled from 'styles/styled';
 
 export default function Home() {
   return (

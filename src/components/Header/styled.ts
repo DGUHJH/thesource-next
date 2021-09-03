@@ -34,9 +34,9 @@ export const LeftMenuTypo = styled(Typography)`
     font-family: NotoSans-Regular;
     font-size: 16px;
     color: #575757;
-    margin-left: 45px;
     cursor: pointer;
     margin-top: 2px;
+    margin-left: 45px;
   }
 `;
 

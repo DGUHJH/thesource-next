@@ -29,3 +29,33 @@ a {
   font-family: NanumGothic-ExtraBold;
   src: url(../assets/fonts/NanumGothic-ExtraBold.ttf) format('truetype');
 }
+
+@font-face {
+  font-family: NotoSans-Black;
+  src: url(../assets/fonts/NotoSansKR-Black.otf) format('truetype');
+}
+
+@font-face {
+  font-family: NotoSans-Bold;
+  src: url(../assets/fonts/NotoSansKR-Bold.otf) format('truetype');
+}
+
+@font-face {
+  font-family: NotoSans-Medium;
+  src: url(../assets/fonts/NotoSansKR-Medium.otf) format('truetype');
+}
+
+@font-face {
+  font-family: NotoSans-Regular;
+  src: url(../assets/fonts/NotoSansKR-Regular.otf) format('truetype');
+}
+
+@font-face {
+  font-family: NotoSans-Light;
+  src: url(../assets/fonts/NotoSansKR-Light.otf) format('truetype');
+}
+
+@font-face {
+  font-family: NotoSans-Thin;
+  src: url(../assets/fonts/NotoSansKR-Thin.otf) format('truetype');
+}

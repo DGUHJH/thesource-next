@@ -27,6 +27,7 @@ export const LogoImageWrapper = styled(Box)`
   &&& {
     width: 125px;
     height: 43px;
+    cursor: pointer;
   }
 `;
 
@@ -73,7 +74,7 @@ export const BannerContainer = styled(Box)`
 
 export const BannerWrapper = styled(Box)`
   width: 1920px;
-  height: 600px;
+  height: 100%;
 `;
 
 export const SearchBarWrapper = styled(Box)`

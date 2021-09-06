@@ -55,11 +55,13 @@ export const Header = () => {
     router.push(url);
   };
 
+  console.log(router.pathname);
+
   return (
     <Styled.Root>
       <Styled.MenuContainer>
         <Styled.LeftContainer>
-          <Styled.LogoImageWrapper>
+          <Styled.LogoImageWrapper onClick={onMenuClick('/')}>
             <Image src={headerLogo} />
           </Styled.LogoImageWrapper>
           {contentMenu.map((value, index) => (
@@ -82,11 +84,21 @@ export const Header = () => {
           ))}
         </Styled.RightContainer>
       </Styled.MenuContainer>
-      <Styled.BannerContainer>
+      <Styled.BannerContainer
+        style={
+          router.pathname === '/' ? { height: '600px' } : { height: '240px' }
+        }
+      >
         <Styled.BannerWrapper>
-          <Image height={600} src={mainBanner} layout="fill" />
+          <Image
+            height={router.pathname === '/' ? 600 : 240}
+            src={mainBanner}
+            layout="fill"
+          />
         </Styled.BannerWrapper>
-        <Styled.SearchBarWrapper>
+        <Styled.SearchBarWrapper
+          style={router.pathname === '/' ? { top: '270px' } : { top: '90px' }}
+        >
           <SearchBar />
         </Styled.SearchBarWrapper>
       </Styled.BannerContainer>

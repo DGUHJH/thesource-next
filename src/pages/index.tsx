@@ -6,8 +6,6 @@ import iconMenu5 from 'assets/images/icon_menu_5.png';
 import iconMenu6 from 'assets/images/icon_menu_6.png';
 import iconMenu7 from 'assets/images/icon_menu_7.png';
 import mainBannerLicense from 'assets/images/main_banner_license.png';
-import { Footer } from 'components/Footer';
-import { Header } from 'components/Header';
 import Head from 'next/head';
 import Image from 'next/image';
 import { BrowserView, MobileView } from 'react-device-detect';
@@ -44,7 +42,6 @@ const Main = () => {
 const Pc = () => {
   return (
     <Styled.Body>
-      <Header />
       <Styled.IconMenuBody>
         <Styled.IconMenuContainer>
           <Styled.IconMenuLeftContainer>
@@ -109,7 +106,6 @@ const Pc = () => {
           </Styled.LicenseImgWrapper>
         </Styled.LicenseContainer>
       </Styled.NewContentContainer>
-      <Footer />
     </Styled.Body>
   );
 };

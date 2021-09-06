@@ -66,6 +66,11 @@ export const Header = () => {
           </Styled.LogoImageWrapper>
           {contentMenu.map((value, index) => (
             <Styled.LeftMenuTypo
+              style={
+                router.pathname === value.url
+                  ? { fontFamily: 'NotoSans-Bold', color: '#4EA5FC' }
+                  : {}
+              }
               key={`header_left_menu_typo_${index}`}
               onClick={onMenuClick(value.url)}
             >

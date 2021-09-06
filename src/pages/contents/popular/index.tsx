@@ -1,3 +1,4 @@
+import { PopularContainer } from 'components/Container/Popular';
 import Head from 'next/head';
 import { BrowserView, MobileView } from 'react-device-detect';
 import * as Styled from 'styles/styled';
@@ -21,7 +22,11 @@ const Main = () => {
 };
 
 const Pc = () => {
-  return <div>1</div>;
+  return (
+    <div>
+      <PopularContainer />
+    </div>
+  );
 };
 
 const Mobile = () => {

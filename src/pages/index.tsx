@@ -5,7 +5,7 @@ import iconMenu4 from 'assets/images/icon_menu_4.png';
 import iconMenu5 from 'assets/images/icon_menu_5.png';
 import iconMenu6 from 'assets/images/icon_menu_6.png';
 import iconMenu7 from 'assets/images/icon_menu_7.png';
-import mainBannerLicense from 'assets/images/main_banner_license.png';
+import { PopularContainer } from 'components/Container/Popular';
 import Head from 'next/head';
 import Image from 'next/image';
 import { BrowserView, MobileView } from 'react-device-detect';
@@ -67,45 +67,7 @@ const Pc = () => {
           </Styled.IconMenuRightContainer>
         </Styled.IconMenuContainer>
       </Styled.IconMenuBody>
-      <Styled.BestContentContainer>
-        <Styled.BestContentTitleWrapper>
-          <Styled.BestContentTitleTypo>
-            <Styled.BestContentTitleTypoBold>
-              BEST
-            </Styled.BestContentTitleTypoBold>{' '}
-            <Styled.BestContentTitleTypoLight>
-              CONTENT
-            </Styled.BestContentTitleTypoLight>
-          </Styled.BestContentTitleTypo>
-        </Styled.BestContentTitleWrapper>
-        <Styled.BestContentListContainer>
-          <Styled.BestContentListSample />
-          <Styled.BestContentListSample />
-          <Styled.BestContentListSample />
-          <Styled.BestContentListSample />
-          <Styled.BestContentListSample />
-        </Styled.BestContentListContainer>
-      </Styled.BestContentContainer>
-      <Styled.NewContentContainer>
-        <Styled.NewContentTitleWrapper>
-          <Styled.NewContentTitleTypo>
-            <Styled.NewContentTitleTypoBold>NEW</Styled.NewContentTitleTypoBold>{' '}
-            <Styled.NewContentTitleTypoLight>
-              CONTENT
-            </Styled.NewContentTitleTypoLight>
-          </Styled.NewContentTitleTypo>
-        </Styled.NewContentTitleWrapper>
-        <Styled.NewContentListContainer>
-          <Styled.NewContentListSample />
-          <Styled.NewContentListSample />
-          <Styled.NewContentListSample />
-        </Styled.NewContentListContainer>
-        <Styled.LicenseContainer>
-          <Styled.LicenseImgWrapper>
-            <Image src={mainBannerLicense} layout="responsive" />
-          </Styled.LicenseImgWrapper>
-        </Styled.LicenseContainer>
-      </Styled.NewContentContainer>
+      <PopularContainer />
     </Styled.Body>
   );
 };

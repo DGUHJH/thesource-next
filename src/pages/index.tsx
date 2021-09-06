@@ -70,11 +70,45 @@ const Pc = () => {
           </Styled.IconMenuRightContainer>
         </Styled.IconMenuContainer>
       </Styled.IconMenuBody>
-      <Styled.LicenseContainer>
-        <Styled.LicenseImgWrapper>
-          <Image src={mainBannerLicense} layout="responsive" />
-        </Styled.LicenseImgWrapper>
-      </Styled.LicenseContainer>
+      <Styled.BestContentContainer>
+        <Styled.BestContentTitleWrapper>
+          <Styled.BestContentTitleTypo>
+            <Styled.BestContentTitleTypoBold>
+              BEST
+            </Styled.BestContentTitleTypoBold>{' '}
+            <Styled.BestContentTitleTypoLight>
+              CONTENT
+            </Styled.BestContentTitleTypoLight>
+          </Styled.BestContentTitleTypo>
+        </Styled.BestContentTitleWrapper>
+        <Styled.BestContentListContainer>
+          <Styled.BestContentListSample />
+          <Styled.BestContentListSample />
+          <Styled.BestContentListSample />
+          <Styled.BestContentListSample />
+          <Styled.BestContentListSample />
+        </Styled.BestContentListContainer>
+      </Styled.BestContentContainer>
+      <Styled.NewContentContainer>
+        <Styled.NewContentTitleWrapper>
+          <Styled.NewContentTitleTypo>
+            <Styled.NewContentTitleTypoBold>NEW</Styled.NewContentTitleTypoBold>{' '}
+            <Styled.NewContentTitleTypoLight>
+              CONTENT
+            </Styled.NewContentTitleTypoLight>
+          </Styled.NewContentTitleTypo>
+        </Styled.NewContentTitleWrapper>
+        <Styled.NewContentListContainer>
+          <Styled.NewContentListSample />
+          <Styled.NewContentListSample />
+          <Styled.NewContentListSample />
+        </Styled.NewContentListContainer>
+        <Styled.LicenseContainer>
+          <Styled.LicenseImgWrapper>
+            <Image src={mainBannerLicense} layout="responsive" />
+          </Styled.LicenseImgWrapper>
+        </Styled.LicenseContainer>
+      </Styled.NewContentContainer>
       <Footer />
     </Styled.Body>
   );

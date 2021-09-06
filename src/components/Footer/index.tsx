@@ -33,7 +33,9 @@ export const Footer = () => {
     <Styled.Root>
       <Styled.MenuContainer>
         {MenuList.map((value, index) => (
-          <Styled.MenuTypo>{value.label}</Styled.MenuTypo>
+          <Styled.MenuTypo key={`footer_menu_typo_${index}`}>
+            {value.label}
+          </Styled.MenuTypo>
         ))}
       </Styled.MenuContainer>
       <Styled.InfoContainer>

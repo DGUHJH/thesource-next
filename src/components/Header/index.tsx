@@ -56,7 +56,7 @@ export const Header = () => {
             <Image src={headerLogo} />
           </Styled.LogoImageWrapper>
           {contentMenu.map((value, index) => (
-            <Styled.LeftMenuTypo key={`left_menu_typo_${index}`}>
+            <Styled.LeftMenuTypo key={`header_left_menu_typo_${index}`}>
               {value.label}
             </Styled.LeftMenuTypo>
           ))}
@@ -65,7 +65,7 @@ export const Header = () => {
           {userMenu.map((value, index) => (
             <>
               {index != 0 && <Styled.RightMenuDivBar />}
-              <Styled.RightMenuTypo key={`right_menu_typo_${index}`}>
+              <Styled.RightMenuTypo key={`header_right_menu_typo_${index}`}>
                 {value.label}
               </Styled.RightMenuTypo>
             </>

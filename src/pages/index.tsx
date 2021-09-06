@@ -5,6 +5,8 @@ import iconMenu4 from 'assets/images/icon_menu_4.png';
 import iconMenu5 from 'assets/images/icon_menu_5.png';
 import iconMenu6 from 'assets/images/icon_menu_6.png';
 import iconMenu7 from 'assets/images/icon_menu_7.png';
+import mainBannerLicense from 'assets/images/main_banner_license.png';
+import { Footer } from 'components/Footer';
 import { Header } from 'components/Header';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -59,8 +61,21 @@ const Pc = () => {
               </>
             ))}
           </Styled.IconMenuLeftContainer>
+          <Styled.IconMenuRightContainer>
+            <Styled.IconMenuRightJoinButton variant="outlined">
+              <Styled.IconMenuRightJoinButtonTypo>
+                무료회원가입
+              </Styled.IconMenuRightJoinButtonTypo>
+            </Styled.IconMenuRightJoinButton>
+          </Styled.IconMenuRightContainer>
         </Styled.IconMenuContainer>
       </Styled.IconMenuBody>
+      <Styled.LicenseContainer>
+        <Styled.LicenseImgWrapper>
+          <Image src={mainBannerLicense} layout="responsive" />
+        </Styled.LicenseImgWrapper>
+      </Styled.LicenseContainer>
+      <Footer />
     </Styled.Body>
   );
 };

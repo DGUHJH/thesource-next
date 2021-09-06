@@ -33,13 +33,14 @@ $ git push origin develop:master
 - Snake case / text_field
 
 ## Folder Structure
+.
 ├── src
-    ├── api                  
-    ├── assets
-        ├── images
-        ├── fonts
-        ├── sample
-    ├── feature             
-    ├── pages                   
-    ├── styles
-    └── types
+│    ├── api                  
+│    ├── assets
+│        ├── images
+│        ├── fonts
+│        ├── sample
+│    ├── feature             
+│    ├── pages                   
+│    ├── styles
+│    └── types

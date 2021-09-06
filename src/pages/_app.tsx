@@ -1,5 +1,7 @@
 import { Footer } from 'components/Footer';
 import { Header } from 'components/Header';
+import store from 'features';
+import { Provider } from 'react-redux';
 import '../styles/globals.css';
 
 type Props = {
@@ -10,7 +12,9 @@ type Props = {
 function MyApp({ Component, pageProps }: Props) {
   return (
     <div>
-      <Header /> <Component {...pageProps} /> <Footer />
+      <Provider store={store}>
+        <Header /> <Component {...pageProps} /> <Footer />
+      </Provider>
     </div>
   );
 }

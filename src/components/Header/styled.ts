@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const Root = styled(Box)`
   width: 100%;
+  border-bottom: 1px #ccc solid;
 `;
 
 export const MenuContainer = styled(Container)`
@@ -12,7 +13,6 @@ export const MenuContainer = styled(Container)`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px #ccc solid;
     padding: 0;
   }
 `;

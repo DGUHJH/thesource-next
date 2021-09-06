@@ -1,6 +1,7 @@
 import headerLogo from 'assets/images/header_logo.png';
 import mainBanner from 'assets/images/main_banner.png';
 import { SearchBar } from 'components/SearchBar';
+import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import React from 'react';
 import * as Styled from './styled';
@@ -8,7 +9,7 @@ import * as Styled from './styled';
 const contentMenu = [
   {
     label: '인기콘텐츠',
-    url: '',
+    url: '/contents/popular',
   },
   {
     label: '이미지',
@@ -48,6 +49,12 @@ const userMenu = [
 ];
 
 export const Header = () => {
+  const router = useRouter();
+
+  const onMenuClick = (url: string) => () => {
+    router.push(url);
+  };
+
   return (
     <Styled.Root>
       <Styled.MenuContainer>
@@ -56,7 +63,10 @@ export const Header = () => {
             <Image src={headerLogo} />
           </Styled.LogoImageWrapper>
           {contentMenu.map((value, index) => (
-            <Styled.LeftMenuTypo key={`header_left_menu_typo_${index}`}>
+            <Styled.LeftMenuTypo
+              key={`header_left_menu_typo_${index}`}
+              onClick={onMenuClick(value.url)}
+            >
               {value.label}
             </Styled.LeftMenuTypo>
           ))}

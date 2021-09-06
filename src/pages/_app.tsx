@@ -10,8 +10,7 @@ type Props = {
 function MyApp({ Component, pageProps }: Props) {
   return (
     <div>
-      <Header /> <Component {...pageProps} />
-      <Footer />
+      <Header /> <Component {...pageProps} /> <Footer />
     </div>
   );
 }

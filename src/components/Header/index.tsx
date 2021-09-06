@@ -55,8 +55,6 @@ export const Header = () => {
     router.push(url);
   };
 
-  console.log(router.pathname);
-
   return (
     <Styled.Root>
       <Styled.MenuContainer>
@@ -67,7 +65,7 @@ export const Header = () => {
           {contentMenu.map((value, index) => (
             <Styled.LeftMenuTypo
               style={
-                router.pathname === value.url
+                router?.pathname === value.url
                   ? { fontFamily: 'NotoSans-Bold', color: '#4EA5FC' }
                   : {}
               }
@@ -80,29 +78,26 @@ export const Header = () => {
         </Styled.LeftContainer>
         <Styled.RightContainer>
           {userMenu.map((value, index) => (
-            <>
+            <div
+              style={{ display: 'flex', alignItems: 'center' }}
+              key={`header_right_menu_typo_${index}`}
+            >
               {index != 0 && <Styled.RightMenuDivBar />}
-              <Styled.RightMenuTypo key={`header_right_menu_typo_${index}`}>
-                {value.label}
-              </Styled.RightMenuTypo>
-            </>
+              <Styled.RightMenuTypo>{value.label}</Styled.RightMenuTypo>
+            </div>
           ))}
         </Styled.RightContainer>
       </Styled.MenuContainer>
       <Styled.BannerContainer
         style={
-          router.pathname === '/' ? { height: '600px' } : { height: '240px' }
+          router?.pathname === '/' ? { height: '600px' } : { height: '240px' }
         }
       >
         <Styled.BannerWrapper>
-          <Image
-            height={router.pathname === '/' ? 600 : 240}
-            src={mainBanner}
-            layout="fill"
-          />
+          <Image src={mainBanner} layout="fill" />
         </Styled.BannerWrapper>
         <Styled.SearchBarWrapper
-          style={router.pathname === '/' ? { top: '270px' } : { top: '90px' }}
+          style={router?.pathname === '/' ? { top: '270px' } : { top: '90px' }}
         >
           <SearchBar />
         </Styled.SearchBarWrapper>

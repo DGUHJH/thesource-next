@@ -1,7 +1,9 @@
 import headerLogo from 'assets/images/header_logo.png';
 import mainBanner from 'assets/images/main_banner.png';
+import { JoinDialog } from 'components/Dialog/Join';
 import { LoginDialog } from 'components/Dialog/Login';
 import { SearchBar } from 'components/SearchBar';
+import { joinDialogClose, joinDialogOpen } from 'features/join/joinDialogSlice';
 import {
   loginDialogClose,
   loginDialogOpen,
@@ -51,6 +53,14 @@ export const Header = () => {
     }
   };
 
+  const handleJoinDialog = (value: boolean) => () => {
+    if (value) {
+      dispatch(joinDialogOpen());
+    } else {
+      dispatch(joinDialogClose());
+    }
+  };
+
   const onMenuClick = (url: string) => () => {
     router.push(url);
   };
@@ -62,7 +72,7 @@ export const Header = () => {
     },
     {
       label: '회원가입',
-      onClick: handleLoginDialog(true),
+      onClick: handleJoinDialog(true),
     },
     {
       label: '고객센터',
@@ -120,6 +130,7 @@ export const Header = () => {
         </Styled.SearchBarWrapper>
       </Styled.BannerContainer>
       <LoginDialog />
+      <JoinDialog />
     </Styled.Root>
   );
 };

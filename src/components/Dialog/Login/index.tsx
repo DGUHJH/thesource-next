@@ -41,7 +41,7 @@ export const LoginDialog: React.FC = () => {
         <Styled.JoinTypo>
           디소스의{' '}
           <Styled.JoinTypoBold> 다양한 콘텐츠들을 </Styled.JoinTypoBold> <br />
-          <Styled.JoinTypoBold> 이용 </Styled.JoinTypoBold>하고 싶다면?
+          <Styled.JoinTypoBold>이용</Styled.JoinTypoBold>하고 싶다면?
         </Styled.JoinTypo>
         <Styled.JoinButton variant="outlined">
           <Styled.JoinButtonTypo>회원가입 하기</Styled.JoinButtonTypo>

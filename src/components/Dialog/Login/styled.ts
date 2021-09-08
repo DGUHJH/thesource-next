@@ -66,7 +66,7 @@ export const Bar = styled(Box)`
 
 export const JoinTypo = styled(Typography)`
   &&& {
-    font-family: NotoSans-Medium;
+    font-family: NotoSans-Regular;
     font-size: 16px;
     color: #4b4b4b;
     margin-top: 15px;

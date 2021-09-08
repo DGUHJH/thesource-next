@@ -59,3 +59,7 @@ a {
   font-family: NotoSans-Thin;
   src: url(../assets/fonts/NotoSansKR-Thin.otf) format('truetype');
 }
+
+input {
+  font-family: NotoSans-Medium !important;
+}

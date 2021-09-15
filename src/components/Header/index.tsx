@@ -21,19 +21,19 @@ const contentMenu = [
   },
   {
     label: '이미지',
-    url: '',
+    url: '/contents/image',
   },
   {
     label: '음원소스',
-    url: '',
+    url: '/contents/audio',
   },
   {
     label: '영상클립',
-    url: '',
+    url: '/contents/video',
   },
   {
     label: '영상효과',
-    url: '',
+    url: '/contents/effect',
   },
   {
     label: '커뮤니티',

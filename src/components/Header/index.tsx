@@ -90,7 +90,7 @@ export const Header = () => {
           {contentMenu.map((value, index) => (
             <Styled.LeftMenuTypo
               style={
-                router?.pathname === value.url
+                router?.pathname.includes(value.url)
                   ? { fontFamily: 'NotoSans-Bold', color: '#4EA5FC' }
                   : {}
               }

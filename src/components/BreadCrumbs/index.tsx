@@ -9,7 +9,7 @@ type Props = {
 export const BreadCrumbs: React.FC<Props> = ({ content, type }) => {
   return (
     <Styled.Root>
-      <Styled.TypoContainer>
+      <Styled.TypoContainer type={type}>
         {content.map((value, index) => (
           <Styled.Typo>
             {index != 0 && <>&nbsp;&nbsp;{'>'}&nbsp;&nbsp;</>} {value}

@@ -1,6 +1,6 @@
 import mainBannerLicense from 'assets/images/main_banner_license.png';
-import { BasketContentsCard } from 'components/Card/BasketContents';
 import { ContentsCard } from 'components/Card/Contents';
+import { SmallContentsCard } from 'components/Card/SmallContents';
 import Image from 'next/image';
 import React from 'react';
 import * as Styled from './styled';
@@ -20,11 +20,11 @@ export const PopularContainer = () => {
           </Styled.BestContentTitleTypo>
         </Styled.BestContentTitleWrapper>
         <Styled.BestContentListContainer>
-          <BasketContentsCard />
-          <BasketContentsCard />
-          <BasketContentsCard />
-          <BasketContentsCard />
-          <BasketContentsCard />
+          <SmallContentsCard />
+          <SmallContentsCard />
+          <SmallContentsCard />
+          <SmallContentsCard />
+          <SmallContentsCard />
         </Styled.BestContentListContainer>
       </Styled.BestContentContainer>
       <Styled.NewContentContainer>

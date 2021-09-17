@@ -14,7 +14,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div>
       <Provider store={store}>
-        <Header /> <Component {...pageProps} /> <Footer />
+        <div style={{ width: '100%', minHeight: 'calc(100vh - 220px)' }}>
+          <Header /> <Component {...pageProps} />{' '}
+        </div>
+        <Footer />
       </Provider>
     </div>
   );

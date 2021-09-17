@@ -14,6 +14,7 @@ export const Root = styled(Box)`
   flex-direction: column;
   position: relative;
   margin-right: 20px;
+  cursor: pointer;
 `;
 
 export const ImageWrapper = styled(Box)`

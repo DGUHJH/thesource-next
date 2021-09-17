@@ -13,6 +13,7 @@ export const Root = styled(Box)`
   background: #f003;
   margin-right: 20px;
   position: relative;
+  cursor: pointer;
 `;
 
 export const SampleImage = styled(Box)`

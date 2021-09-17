@@ -37,7 +37,7 @@ const contentMenu = [
   },
   {
     label: '커뮤니티',
-    url: '',
+    url: '/comunity',
   },
 ];
 

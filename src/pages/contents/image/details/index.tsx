@@ -1,3 +1,4 @@
+import detailsBannerLicenseImage from 'assets/images/details_banner_license.png';
 import sampleCardImage from 'assets/images/sample_card_image.png';
 import { BreadCrumbs } from 'components/BreadCrumbs';
 import { BasketContentsCard } from 'components/Card/BasketContents';
@@ -129,6 +130,49 @@ const Pc = () => {
               <Styled.BlueButtonTypo>다운로드</Styled.BlueButtonTypo>
             </Styled.BlueButton>
           </Styled.DownloadButtonContainer>
+          <Styled.ContentNumberContainer>
+            <Styled.ContentNumberHeaderContainer>
+              <Styled.ContentNumberTypo>단품</Styled.ContentNumberTypo>
+            </Styled.ContentNumberHeaderContainer>
+            <Styled.ContentNumberBodyContainer>
+              <Styled.ContentNumberTypo>
+                {' '}
+                <Styled.ContentNumberTypoPoint>
+                  {' '}
+                  1{' '}
+                </Styled.ContentNumberTypoPoint>{' '}
+                개{' '}
+              </Styled.ContentNumberTypo>
+            </Styled.ContentNumberBodyContainer>
+          </Styled.ContentNumberContainer>
+          <Styled.DownloadButtonContainer>
+            <Styled.WhiteButton>
+              <Styled.WhiteButtonTypo>장바구니</Styled.WhiteButtonTypo>
+            </Styled.WhiteButton>
+            <Styled.BlueButton>
+              <Styled.BlueButtonTypo>단품구매</Styled.BlueButtonTypo>
+            </Styled.BlueButton>
+          </Styled.DownloadButtonContainer>
+          <Styled.LicenseContainer>
+            <Styled.LicenseTitleTypo>라이선스 내용</Styled.LicenseTitleTypo>
+            <Styled.LicenseContentContainer>
+              <Styled.LicenseContentTypo>
+                &#183;&nbsp; 전세계 사용 가능
+              </Styled.LicenseContentTypo>
+              <Styled.LicenseContentTypo>
+                &#183;&nbsp; 2차 판매 불가
+              </Styled.LicenseContentTypo>
+              <Styled.LicenseContentTypo>
+                &#183;&nbsp; 추가 비용 지불 없음
+              </Styled.LicenseContentTypo>
+              <Styled.LicenseContentTypo>
+                &#183;&nbsp; 상업적 사용 가능
+              </Styled.LicenseContentTypo>
+            </Styled.LicenseContentContainer>
+          </Styled.LicenseContainer>
+          <Styled.BannerImage>
+            <Image src={detailsBannerLicenseImage} layout="fill" />
+          </Styled.BannerImage>
         </Styled.RightContainer>
       </Styled.ContentContainer>
     </div>

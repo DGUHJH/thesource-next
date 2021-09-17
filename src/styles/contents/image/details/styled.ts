@@ -205,6 +205,24 @@ export const DownloadButtonContainer = styled(Box)`
   margin-top: 15px;
 `;
 
+export const WhiteButton = styled(Button)`
+  &&& {
+    width: 150px;
+    height: 44px;
+    background: #fff;
+    border-radius: 0;
+    border: 1px #e9e9e9 solid;
+  }
+`;
+
+export const WhiteButtonTypo = styled(Typography)`
+  &&& {
+    font-family: NotoSans-Regular;
+    font-size: 14px;
+    color: #676767;
+  }
+`;
+
 export const BlueButton = styled(Button)`
   &&& {
     width: 150px;
@@ -220,4 +238,88 @@ export const BlueButtonTypo = styled(Typography)`
     font-size: 14px;
     color: #fff;
   }
+`;
+
+export const ContentNumberContainer = styled(Box)`
+  width: 100%;
+  display: flex;
+  margin-top: 40px;
+`;
+
+export const ContentNumberHeaderContainer = styled(Box)`
+  width: 120px;
+  height: 41px;
+  background: #e9e9e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px #e9e9e9 solid;
+`;
+
+export const ContentNumberBodyContainer = styled(Box)`
+  width: 180px;
+  height: 41px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border: 1px #e9e9e9 solid;
+  padding: 0 15px;
+  box-sizing: border-box;
+`;
+
+export const ContentNumberTypo = styled(Typography)`
+  &&& {
+    font-family: NotoSans-Regular;
+    font-size: 12px;
+    color: #676767;
+  }
+`;
+
+export const ContentNumberTypoPoint = styled.span`
+  &&& {
+    font-family: NotoSans-Regular;
+    font-size: 14px;
+    color: #2b2b2b;
+  }
+`;
+
+export const LicenseContainer = styled(Box)`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+`;
+
+export const LicenseTitleTypo = styled(Typography)`
+  &&& {
+    font-family: NotoSans-Regular;
+    font-size: 16px;
+    color: #2b2b2b;
+    font-weight: 500;
+  }
+`;
+
+export const LicenseContentContainer = styled(Box)`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+`;
+
+export const LicenseContentTypo = styled(Typography)`
+  &&& {
+    width: 50%;
+    font-family: NotoSans-Regular;
+    font-size: 12px;
+    color: #999;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+`;
+
+export const BannerImage = styled(Box)`
+  width: 100%;
+  height: 104px;
+  margin-top: 200px;
+  position: relative;
 `;

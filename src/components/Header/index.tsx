@@ -76,7 +76,7 @@ export const Header = () => {
     },
     {
       label: '고객센터',
-      onClick: handleLoginDialog(true),
+      onClick: onMenuClick('/purchase'),
     },
   ];
 

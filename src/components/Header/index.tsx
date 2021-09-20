@@ -10,7 +10,7 @@ import {
   loginDialogClose,
   loginDialogOpen,
 } from 'features/login/loginDialogSlice';
-import { LoginState, setLogin, setLogout } from 'features/login/loginSlice';
+import { LoginState, setLogin } from 'features/login/loginSlice';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import React from 'react';
@@ -89,9 +89,8 @@ export const Header = () => {
   const handleLogin = (value: boolean) => () => {
     if (value) {
       dispatch(setLogin());
-      router.reload();
     } else {
-      dispatch(setLogout());
+      // dispatch(setLogout());
       router.reload();
     }
   };
@@ -118,7 +117,7 @@ export const Header = () => {
           ))}
         </Styled.LeftContainer>
         <Styled.RightContainer>
-          {loginData.login ? (
+          {!loginData.login ? (
             userMenu.map((value, index) => (
               <div
                 style={{ display: 'flex', alignItems: 'center' }}
@@ -148,7 +147,7 @@ export const Header = () => {
               <Styled.RightMenuDivBar />
               <Styled.RightMenuTypo
                 style={{ fontFamily: 'NotoSans-Medium' }}
-                onClick={handleLogin(false)}
+                onClick={onMenuClick('/service')}
               >
                 고객센터
               </Styled.RightMenuTypo>

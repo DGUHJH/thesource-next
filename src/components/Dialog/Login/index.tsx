@@ -4,7 +4,7 @@ import {
   loginDialogClose,
   LoginDialogState,
 } from 'features/login/loginDialogSlice';
-import { setLogin, setLogout } from 'features/login/loginSlice';
+import { setLogin } from 'features/login/loginSlice';
 import { useRouter } from 'next/dist/client/router';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,9 +25,10 @@ export const LoginDialog: React.FC = () => {
   const handleLogin = (value: boolean) => () => {
     if (value) {
       dispatch(setLogin());
-      router.reload();
+      // router.reload();
     } else {
-      dispatch(setLogout());
+      // dispatch(setLogout());
+      router.reload();
     }
   };
 

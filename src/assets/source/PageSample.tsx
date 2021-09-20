@@ -1,15 +1,10 @@
-import Head from 'next/head';
+import React from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
-import * as Styled from 'styles/styled';
+import * as Styled from 'styles/contents/search/styled';
 
 const Main = () => {
   return (
     <Styled.Root>
-      <Head>
-        <title>디소스 (The Source)</title>
-        <meta name="description" content="디소스 - 메인 페이지" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <BrowserView>
         <Pc />
       </BrowserView>
@@ -21,11 +16,11 @@ const Main = () => {
 };
 
 const Pc = () => {
-  return <div>1</div>;
+  return <div></div>;
 };
 
 const Mobile = () => {
-  return <div>2</div>;
+  return <div></div>;
 };
 
 export default Main;

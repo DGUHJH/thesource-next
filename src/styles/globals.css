@@ -63,3 +63,15 @@ a {
 input {
   font-family: NotoSans-Medium !important;
 }
+
+.MuiBadge-colorSecondary {
+  width: 14px !important;
+  min-width: 14px !important;
+  height: 14px !important;
+  min-height: 14px !important;
+  font-size: 8px !important;
+  background: #575757 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}

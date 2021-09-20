@@ -4,12 +4,15 @@ import {
   loginDialogClose,
   LoginDialogState,
 } from 'features/login/loginDialogSlice';
+import { setLogin, setLogout } from 'features/login/loginSlice';
+import { useRouter } from 'next/dist/client/router';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as Styled from './styled';
 
 export const LoginDialog: React.FC = () => {
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const loginDialogData = useSelector<ReducerType, LoginDialogState>(
     (state) => state.loginDialog
@@ -17,6 +20,15 @@ export const LoginDialog: React.FC = () => {
 
   const handleClose = () => {
     dispatch(loginDialogClose());
+  };
+
+  const handleLogin = (value: boolean) => () => {
+    if (value) {
+      dispatch(setLogin());
+      router.reload();
+    } else {
+      dispatch(setLogout());
+    }
   };
 
   return (
@@ -31,7 +43,7 @@ export const LoginDialog: React.FC = () => {
           placeholder="비밀번호를 입력해주세요."
           variant="outlined"
         />
-        <Styled.LoginButton>
+        <Styled.LoginButton onClick={handleLogin(true)}>
           <Styled.LoginButtonTypo>로그인</Styled.LoginButtonTypo>
         </Styled.LoginButton>
         <Styled.FindPasswordTypoWrapper>

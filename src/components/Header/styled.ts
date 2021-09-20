@@ -1,4 +1,5 @@
 import { Box, Container, Typography } from '@material-ui/core';
+import { ShoppingCartOutlined } from '@material-ui/icons';
 import styled from 'styled-components';
 
 export const Root = styled(Box)`
@@ -57,6 +58,12 @@ export const RightMenuTypo = styled(Typography)`
   }
 `;
 
+export const RightMenuTypoPoint = styled.span`
+  &&& {
+    font-family: NotoSans-Bold;
+  }
+`;
+
 export const RightMenuDivBar = styled(Box)`
   width: 1px;
   height: 11px;
@@ -83,4 +90,11 @@ export const SearchBarWrapper = styled(Box)`
   justify-content: center;
   position: absolute;
   top: 270px;
+`;
+
+export const ShoppingCart = styled(ShoppingCartOutlined)`
+  &&& {
+    font-size: 18px;
+    cursor: pointer;
+  }
 `;

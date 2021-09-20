@@ -1,39 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export type LoginDialogState = {
-  open: boolean;
-  mobileOpen: boolean;
+export type LoginState = {
+  login: boolean;
 };
 
-const initialState: LoginDialogState = {
-  open: false,
-  mobileOpen: false,
+const initialState: LoginState = {
+  login: false,
 };
 
 export const loginDialogSlice = createSlice({
-  name: 'loginDialog',
+  name: 'login',
   initialState,
   reducers: {
-    loginDialogOpen: (state) => {
-      state.open = true;
+    setLogin: (state) => {
+      state.login = true;
     },
-    loginDialogClose: (state) => {
-      state.open = false;
-    },
-    mobileLoginDialogOpen: (state) => {
-      state.mobileOpen = true;
-    },
-    mobileLoginDialogClose: (state) => {
-      state.mobileOpen = false;
+    setLogout: (state) => {
+      state.login = false;
     },
   },
 });
 
-export const {
-  loginDialogOpen,
-  loginDialogClose,
-  mobileLoginDialogOpen,
-  mobileLoginDialogClose,
-} = loginDialogSlice.actions;
+export const { setLogin, setLogout } = loginDialogSlice.actions;
 
 export default loginDialogSlice.reducer;

@@ -11,7 +11,7 @@ export const BreadCrumbs: React.FC<Props> = ({ content, type }) => {
     <Styled.Root>
       <Styled.TypoContainer type={type}>
         {content.map((value, index) => (
-          <Styled.Typo>
+          <Styled.Typo key={`bread_crumbs_${index}`}>
             {index != 0 && <>&nbsp;&nbsp;{'>'}&nbsp;&nbsp;</>} {value}
           </Styled.Typo>
         ))}

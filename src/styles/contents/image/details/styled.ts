@@ -320,6 +320,6 @@ export const LicenseContentTypo = styled(Typography)`
 export const BannerImage = styled(Box)`
   width: 100%;
   height: 104px;
-  margin-top: 200px;
+  margin-top: 20px;
   position: relative;
 `;

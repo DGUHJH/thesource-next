@@ -1,7 +1,6 @@
 import detailsBannerLicenseImage from 'assets/images/details_banner_license.png';
 import sampleCardImage from 'assets/images/sample_card_image.png';
 import { BreadCrumbs } from 'components/BreadCrumbs';
-import { BasketContentsCard } from 'components/Card/BasketContents';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import { BrowserView, MobileView } from 'react-device-detect';
@@ -39,13 +38,13 @@ const Pc = () => {
               유사 콘텐츠
             </Styled.OtherContentsTitleTypo>
             <Styled.OtherContentsCardContainer>
+              {/* <BasketContentsCard />
               <BasketContentsCard />
               <BasketContentsCard />
-              <BasketContentsCard />
-              <BasketContentsCard />
+              <BasketContentsCard /> */}
             </Styled.OtherContentsCardContainer>
           </Styled.OtherContentsContainer>
-          <Styled.OtherContentsContainer>
+          {/* <Styled.OtherContentsContainer>
             <Styled.OtherContentsTitleTypo>
               저작권자의 다른 콘텐츠
             </Styled.OtherContentsTitleTypo>
@@ -55,7 +54,7 @@ const Pc = () => {
               <BasketContentsCard />
               <BasketContentsCard />
             </Styled.OtherContentsCardContainer>
-          </Styled.OtherContentsContainer>
+          </Styled.OtherContentsContainer> */}
           <Styled.TagContainer>
             <Styled.TagTitleTypo>키워드</Styled.TagTitleTypo>
             <Styled.TagChipContainer>

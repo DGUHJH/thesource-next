@@ -1,6 +1,6 @@
 import { getImageDetail } from 'api/contents/fetch';
 import detailsBannerLicenseImage from 'assets/images/details_banner_license.png';
-import sampleCardImage from 'assets/images/sample_card_image.png';
+import sample from 'assets/images/sample.png';
 import { BreadCrumbs } from 'components/BreadCrumbs';
 import { BasketContentsCard } from 'components/Card/BasketContents';
 import { useRouter } from 'next/dist/client/router';
@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import * as Styled from 'styles/contents/image/details/styled';
 import {
+  ContentType,
   ImageContentDetailResponse,
   ImageContentDetailType,
 } from 'types/contents';
@@ -35,12 +36,14 @@ const Pc = () => {
   const { query }: any = useRouter();
 
   useEffect(() => {
-    getImageDetail(query.id).then((res: ImageContentDetailResponse) => {
-      if (res.status.type === 'success') {
-        setData(res.data);
-      }
-    });
-  }, []);
+    if (query.id) {
+      getImageDetail(query.id).then((res: ImageContentDetailResponse) => {
+        if (res.status.type === 'success') {
+          setData(res.data);
+        }
+      });
+    }
+  }, [query]);
 
   console.log(data);
   return (
@@ -50,7 +53,7 @@ const Pc = () => {
         <Styled.LeftContainer>
           <Styled.ThumbnailWrapper>
             <Image
-              src={data?.preview ?? sampleCardImage}
+              src={data?.preview ?? sample}
               width="900px"
               height="600px"
               objectFit="contain"
@@ -61,13 +64,20 @@ const Pc = () => {
               유사 콘텐츠
             </Styled.OtherContentsTitleTypo>
             <Styled.OtherContentsCardContainer>
-              <BasketContentsCard />
-              <BasketContentsCard />
-              <BasketContentsCard />
-              <BasketContentsCard />
+              {data?.recommends.map(
+                (value: ContentType, index: number) =>
+                  index < 4 && (
+                    <BasketContentsCard
+                      id={value.id}
+                      thumbnail={value.thumbnail}
+                      content_type={value.content_type}
+                      key={`backet_contents_card_${index}`}
+                    />
+                  )
+              )}
             </Styled.OtherContentsCardContainer>
           </Styled.OtherContentsContainer>
-          <Styled.OtherContentsContainer>
+          {/* <Styled.OtherContentsContainer>
             <Styled.OtherContentsTitleTypo>
               저작권자의 다른 콘텐츠
             </Styled.OtherContentsTitleTypo>
@@ -77,7 +87,7 @@ const Pc = () => {
               <BasketContentsCard />
               <BasketContentsCard />
             </Styled.OtherContentsCardContainer>
-          </Styled.OtherContentsContainer>
+          </Styled.OtherContentsContainer> */}
           <Styled.TagContainer>
             <Styled.TagTitleTypo>키워드</Styled.TagTitleTypo>
             <Styled.TagChipContainer>

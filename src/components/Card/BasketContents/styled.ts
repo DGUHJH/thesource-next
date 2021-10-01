@@ -7,4 +7,5 @@ export const Root = styled(Box)`
   border-radius: 5px;
   overflow: hidden;
   position: relative;
+  cursor: pointer;
 `;

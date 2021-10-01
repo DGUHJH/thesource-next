@@ -228,7 +228,7 @@ export const PriceNumberTypo = styled(Typography)`
     font-weight: 400;
     font-size: 14px;
     color: #444;
-    margin-top: 4px;
+    margin-top: 2px;
   }
 `;
 
@@ -385,5 +385,197 @@ export const CancelButtonTypo = styled(Typography)`
     font-family: NotoSans-Light;
     font-size: 16px;
     color: #676767;
+  }
+`;
+
+export const CheckContainer = styled(Box)`
+  width: 909px;
+  height: 225px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px #e9e9e9 solid;
+  margin-top: 80px;
+`;
+
+export const CheckImgWrapper = styled(Box)`
+  width: 104px;
+  height: 104px;
+  position: relative;
+  margin-top: 30px;
+`;
+
+export const CheckTypo = styled(Typography)`
+  &&& {
+    font-family: NotoSans-Regular;
+    font-size: 18px;
+    color: #444;
+    margin-top: 10px;
+  }
+`;
+
+export const CheckTypoPoint = styled.span`
+  &&& {
+    font-family: NotoSans-Bold;
+    color: #4ea5fc;
+  }
+`;
+
+export const CheckNumberTypo = styled(Typography)`
+  &&& {
+    font-family: NotoSans-Regular;
+    font-size: 14px;
+    color: #4ea5fc;
+  }
+`;
+
+export const PurchaseInfoContainer = styled(Box)`
+  width: 909px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+`;
+
+export const PurchaseInfoTitleTypo = styled(Typography)`
+  &&& {
+    font-family: NotoSans-Medium;
+    font-size: 16px;
+    color: #444;
+  }
+`;
+
+export const PurchaseInfoContentContainer = styled(Box)`
+  width: 907px;
+  height: 67px;
+  border: 1px #444 solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 170px;
+  box-sizing: border-box;
+`;
+
+export const PurchaseInfoRowContainer = styled(Box)`
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const PurchaseInfoContentMenuTypo = styled(Typography)`
+  &&& {
+    font-family: NotoSans-Medium;
+    font-size: 18px;
+    color: #444;
+  }
+`;
+
+export const PurchaseInfoContentTypo = styled(Typography)`
+  &&& {
+    font-family: NotoSans-Light;
+    font-size: 18px;
+    color: #555;
+  }
+`;
+
+export const PurchaseInfoContentNumberTypo = styled(Typography)`
+  &&& {
+    font-family: NotoSans-Medium;
+    font-size: 18px;
+    color: #4ea5fc;
+  }
+`;
+
+export const PurchaseContentsContainer = styled(Box)`
+  width: 909px;
+  display: flex;
+  flex-direction: column;
+  border-top: #444 1px solid;
+  border-bottom: #c9c9c9 1px solid;
+  margin-top: 50px;
+`;
+
+export const PurchaseContentsTitleContainer = styled(Box)`
+  width: 100%;
+  height: 43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f1f1f1;
+`;
+
+export const PurchaseContentsTitleTypo = styled(Typography)`
+  &&& {
+    font-family: NotoSans-Medium;
+    font-size: 12px;
+    color: #444;
+  }
+`;
+
+export const PurchaseContentsCardContainer = styled(Box)`
+  width: 100%;
+  height: 136px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px #e9e9e9 solid;
+  padding: 0 60px;
+  box-sizing: border-box;
+`;
+
+export const PurchaseContentsRightContainer = styled(Box)`
+  width: 650px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 45px;
+`;
+
+export const PurchaseContentsCardThumbnailWrapper = styled(Box)`
+  width: 120px;
+  height: 106px;
+  background: #000;
+`;
+
+export const PurchaseContentsCardTypo = styled(Typography)`
+  &&& {
+    font-family: NotoSans-Medium;
+    font-size: 12px;
+    color: #444;
+  }
+`;
+
+export const PurchaseContentsCardTypoInfo = styled.span`
+  &&& {
+    font-family: NotoSans-Light;
+  }
+`;
+
+export const PurchaseContentsCardButton = styled(Button)`
+  &&& {
+    width: 64px;
+    height: 28px;
+    border: 1px #e9e9e9 solid;
+  }
+`;
+
+export const PurchaseContentsCardButtonTypo = styled(Typography)`
+  &&& {
+    font-family: NotoSans-Light;
+    font-size: 12px;
+    color: #676767;
+  }
+`;
+
+export const PurchaseContentsInfoTypo = styled(Typography)`
+  &&& {
+    width: 100%;
+    font-family: NotoSans-Light;
+    font-size: 12px;
+    color: #9e9e9e;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    margin-bottom: 85px;
   }
 `;

@@ -1,3 +1,4 @@
+import check from 'assets/images/icon_check.png';
 import equal from 'assets/images/purchase_equal.png';
 import minus from 'assets/images/purchase_minus.png';
 import sampleCardImage from 'assets/images/sample_card_image.png';
@@ -53,8 +54,90 @@ const Pc = () => {
           <ProcessContainer step={step} />
           {step === 0 && <Step1 />}
           {step === 1 && <Step2 />}
+          {step === 2 && <Step3 />}
         </Styled.RightContainer>
       </Styled.BodyContainer>
+    </div>
+  );
+};
+
+const Step3 = () => {
+  return (
+    <div>
+      <Styled.CheckContainer>
+        <Styled.CheckImgWrapper>
+          <Image src={check} layout="fill" />
+        </Styled.CheckImgWrapper>
+        <Styled.CheckTypo>
+          결제가 <Styled.CheckTypoPoint>완료</Styled.CheckTypoPoint>
+          되었습니다.
+        </Styled.CheckTypo>
+        <Styled.CheckNumberTypo>주문번호 : W129493792</Styled.CheckNumberTypo>
+      </Styled.CheckContainer>
+      <Styled.PurchaseInfoContainer>
+        <Styled.PurchaseInfoTitleTypo>결제 정보</Styled.PurchaseInfoTitleTypo>
+        <Styled.PurchaseInfoContentContainer>
+          <Styled.PurchaseInfoRowContainer>
+            <Styled.PurchaseInfoContentMenuTypo>
+              결제일자
+            </Styled.PurchaseInfoContentMenuTypo>
+            <Styled.PurchaseInfoContentTypo>
+              2021.09.08
+            </Styled.PurchaseInfoContentTypo>
+          </Styled.PurchaseInfoRowContainer>
+          <Styled.PurchaseInfoRowContainer>
+            <Styled.PurchaseInfoContentMenuTypo>
+              결제금액
+            </Styled.PurchaseInfoContentMenuTypo>
+            <Styled.PurchaseInfoContentNumberTypo>
+              1,000원
+            </Styled.PurchaseInfoContentNumberTypo>
+          </Styled.PurchaseInfoRowContainer>
+        </Styled.PurchaseInfoContentContainer>
+      </Styled.PurchaseInfoContainer>
+      <Styled.PurchaseContentsContainer>
+        <Styled.PurchaseContentsTitleContainer>
+          <Styled.PurchaseContentsTitleTypo>
+            결제상품
+          </Styled.PurchaseContentsTitleTypo>
+        </Styled.PurchaseContentsTitleContainer>
+        <Styled.PurchaseContentsCardContainer>
+          <Styled.PurchaseContentsCardThumbnailWrapper />
+          <Styled.PurchaseContentsRightContainer>
+            <Styled.PurchaseContentsCardTypo>
+              [단품구매] 백사장에 누워있는 불가사리 <br />
+              <Styled.PurchaseContentsCardTypoInfo>
+                JPG, 7960 x 4912, 598KB
+              </Styled.PurchaseContentsCardTypoInfo>
+            </Styled.PurchaseContentsCardTypo>
+            <Styled.PurchaseContentsCardButton>
+              <Styled.PurchaseContentsCardButtonTypo>
+                다운로드
+              </Styled.PurchaseContentsCardButtonTypo>
+            </Styled.PurchaseContentsCardButton>
+          </Styled.PurchaseContentsRightContainer>
+        </Styled.PurchaseContentsCardContainer>
+        <Styled.PurchaseContentsCardContainer>
+          <Styled.PurchaseContentsCardThumbnailWrapper />
+          <Styled.PurchaseContentsRightContainer>
+            <Styled.PurchaseContentsCardTypo>
+              [단품구매] 백사장에 누워있는 불가사리 <br />
+              <Styled.PurchaseContentsCardTypoInfo>
+                JPG, 7960 x 4912, 598KB
+              </Styled.PurchaseContentsCardTypoInfo>
+            </Styled.PurchaseContentsCardTypo>
+            <Styled.PurchaseContentsCardButton>
+              <Styled.PurchaseContentsCardButtonTypo>
+                다운로드
+              </Styled.PurchaseContentsCardButtonTypo>
+            </Styled.PurchaseContentsCardButton>
+          </Styled.PurchaseContentsRightContainer>
+        </Styled.PurchaseContentsCardContainer>
+      </Styled.PurchaseContentsContainer>
+      <Styled.PurchaseContentsInfoTypo>
+        다운로드는 [마이페이지] {`->`} [구매 콘텐츠 내역] 에서 다운로드
+        가능합니다.
+      </Styled.PurchaseContentsInfoTypo>
     </div>
   );
 };
@@ -124,8 +207,12 @@ const Step2 = () => {
                 결제방법
               </Styled.PurchaseTableHeaderTypo>
             </Styled.PurchaseTableHeader>
+            <Styled.PurchaseTableBody>
+              <Styled.PurchaseTableBodyTypo>
+                카드결제
+              </Styled.PurchaseTableBodyTypo>
+            </Styled.PurchaseTableBody>
           </Styled.PurchaseTableRow>
-
           <Styled.PurchaseTableRow
             style={{ borderBottom: '1px #c9c9c9 solid' }}
           >
@@ -134,6 +221,11 @@ const Step2 = () => {
                 세금계산서 발행여부
               </Styled.PurchaseTableHeaderTypo>
             </Styled.PurchaseTableHeader>
+            <Styled.PurchaseTableBody>
+              <Styled.PurchaseTableBodyTypo>
+                세금계산서 발행
+              </Styled.PurchaseTableBodyTypo>
+            </Styled.PurchaseTableBody>
           </Styled.PurchaseTableRow>
         </Styled.PurchaseTable>
       </Styled.PurchaseContainer>

@@ -22,7 +22,7 @@ export const LeftContainer = styled(Box)`
 export const ThumbnailWrapper = styled(Box)`
   width: 900px;
   border-radius: 8px;
-  overflow: hidden;
+  position: relative;
 `;
 
 export const OtherContentsContainer = styled(Box)`

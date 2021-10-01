@@ -1,10 +1,21 @@
-import sampleCardImage from 'assets/images/sample_card_image.png';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { ContentType } from 'types/contents';
 import * as Styled from './styled';
 
-export const ContentsCard = () => {
+export const ContentsCard: React.FC<ContentType> = ({
+  categories,
+  content_type,
+  created_at,
+  has_download,
+  id,
+  preview,
+  price,
+  tags,
+  thumbnail,
+  title,
+}) => {
   const [mouseOver, setMouseOver] = useState(false);
   const router = useRouter();
 
@@ -13,7 +24,19 @@ export const ContentsCard = () => {
   };
 
   const onClick = () => {
-    router.push('/contents/image/details');
+    router.push(`/contents/${content_type}/details/?id=${id}`);
+  };
+
+  const contentType = () => {
+    if (content_type === 'audio') {
+      return '음원소스';
+    } else if (content_type === 'effect') {
+      return '영상효과';
+    } else if (content_type === 'image') {
+      return '이미지';
+    } else if (content_type === 'video') {
+      return '영상클립';
+    }
   };
 
   return (
@@ -23,16 +46,22 @@ export const ContentsCard = () => {
       onClick={onClick}
     >
       <Styled.ImageWrapper>
-        <Image src={sampleCardImage} layout="fill" />
+        <Image src={thumbnail} layout="fill" objectFit="cover" />
       </Styled.ImageWrapper>
       {mouseOver && (
         <Styled.EventContainer>
           <Styled.EventTopContainer>
-            <Styled.EventTypo>영상효과</Styled.EventTypo>
+            <Styled.EventTypo>{contentType()}</Styled.EventTypo>
             <Styled.EventShoppingCart />
           </Styled.EventTopContainer>
           <Styled.EventBottomContainer>
-            <Styled.EventTypo>#로고 #애니메이션</Styled.EventTypo>
+            <Styled.EventTypo>
+              {tags.map((tag, index: number) => (
+                <span key={`contents_card_${id}_${index}`}>
+                  #{tag.name}&nbsp;
+                </span>
+              ))}
+            </Styled.EventTypo>
             <Styled.EventBottomItemContainer>
               <Styled.EventHeart />
               <Styled.EventBookmark />
@@ -42,8 +71,8 @@ export const ContentsCard = () => {
       )}
       <Styled.InfoContainer>
         <Styled.InfoTypoContainer>
-          <Styled.TitleTypo>노을지는 해변가</Styled.TitleTypo>
-          <Styled.AuthorTypo>홍길동</Styled.AuthorTypo>
+          <Styled.TitleTypo>{title}</Styled.TitleTypo>
+          <Styled.AuthorTypo>StudioThe</Styled.AuthorTypo>
         </Styled.InfoTypoContainer>
         <Styled.InfoItemContainer>
           <Styled.EventHeart2 />

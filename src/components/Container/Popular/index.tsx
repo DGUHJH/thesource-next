@@ -1,5 +1,4 @@
 import mainBannerLicense from 'assets/images/main_banner_license.png';
-import { ContentsCard } from 'components/Card/Contents';
 import { SmallContentsCard } from 'components/Card/SmallContents';
 import Image from 'next/image';
 import React from 'react';
@@ -37,10 +36,10 @@ export const PopularContainer = () => {
           </Styled.NewContentTitleTypo>
         </Styled.NewContentTitleWrapper>
         <Styled.NewContentListContainer>
+          {/* <ContentsCard />
           <ContentsCard />
           <ContentsCard />
-          <ContentsCard />
-          <ContentsCard />
+          <ContentsCard /> */}
         </Styled.NewContentListContainer>
         <Styled.LicenseContainer>
           <Styled.LicenseImgWrapper>

@@ -1,18 +1,21 @@
 import { Dialog } from '@material-ui/core';
+import { loginFetch } from 'api/login/fetch';
+import { cookies } from 'api/methods/cookies';
 import { ReducerType } from 'features';
 import {
   loginDialogClose,
   LoginDialogState,
 } from 'features/login/loginDialogSlice';
-import { setLogin } from 'features/login/loginSlice';
 import { useRouter } from 'next/dist/client/router';
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as Styled from './styled';
 
 export const LoginDialog: React.FC = () => {
   const dispatch = useDispatch();
   const router = useRouter();
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
 
   const loginDialogData = useSelector<ReducerType, LoginDialogState>(
     (state) => state.loginDialog
@@ -24,11 +27,25 @@ export const LoginDialog: React.FC = () => {
 
   const handleLogin = (value: boolean) => () => {
     if (value) {
-      dispatch(setLogin());
+      // dispatch(setLogin());
       // router.reload();
+      loginFetch({ email, password }).then((res) => {
+        if (res.status.type === 'success') {
+          cookies.set('access_token', res.data.access_token);
+          router.reload();
+        } else {
+          alert(res.status.message);
+        }
+      });
     } else {
       // dispatch(setLogout());
       router.reload();
+    }
+  };
+
+  const onEnterPress: React.KeyboardEventHandler<HTMLDivElement> = (e) => {
+    if (e.key === 'Enter') {
+      handleLogin(true)();
     }
   };
 
@@ -39,10 +56,17 @@ export const LoginDialog: React.FC = () => {
         <Styled.Editor
           placeholder="이메일을 입력해주세요."
           variant="outlined"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          onKeyPress={onEnterPress}
         />
         <Styled.Editor
           placeholder="비밀번호를 입력해주세요."
           variant="outlined"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          onKeyPress={onEnterPress}
         />
         <Styled.LoginButton onClick={handleLogin(true)}>
           <Styled.LoginButtonTypo>로그인</Styled.LoginButtonTypo>

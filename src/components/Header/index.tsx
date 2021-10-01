@@ -1,4 +1,5 @@
 import { Badge } from '@material-ui/core';
+import { getUserInfo } from 'api/login/fetch';
 import headerLogo from 'assets/images/header_logo.png';
 import mainBanner from 'assets/images/main_banner.png';
 import { JoinDialog } from 'components/Dialog/Join';
@@ -10,10 +11,15 @@ import {
   loginDialogClose,
   loginDialogOpen,
 } from 'features/login/loginDialogSlice';
-import { LoginState, setLogin } from 'features/login/loginSlice';
+import {
+  LoginState,
+  setLogin,
+  setLogout,
+  setUserInfo,
+} from 'features/login/loginSlice';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as Styled from './styled';
 
@@ -90,10 +96,26 @@ export const Header = () => {
     if (value) {
       dispatch(setLogin());
     } else {
-      // dispatch(setLogout());
-      router.reload();
+      dispatch(setLogout());
+      // router.reload();
     }
   };
+
+  useEffect(() => {
+    getUserInfo().then((res) => {
+      if (res.status.type === 'success') {
+        dispatch(
+          setUserInfo({
+            email: res.data.email,
+            username: res.data.username,
+          })
+        );
+        dispatch(setLogin());
+      } else {
+        console.log(res.status.message);
+      }
+    });
+  }, []);
 
   return (
     <Styled.Root>
@@ -133,7 +155,10 @@ export const Header = () => {
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <Styled.RightMenuTypo onClick={handleLogin(false)}>
                 {' '}
-                <Styled.RightMenuTypoPoint>황재형</Styled.RightMenuTypoPoint> 님
+                <Styled.RightMenuTypoPoint>
+                  {loginData.email}
+                </Styled.RightMenuTypoPoint>{' '}
+                님
               </Styled.RightMenuTypo>
               <Styled.RightMenuDivBar />
               <Badge

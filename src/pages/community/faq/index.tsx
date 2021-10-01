@@ -25,6 +25,10 @@ const Pc = () => {
         <Styled.LeftContainer>
           <CommunityMenuContainer />
         </Styled.LeftContainer>
+        <Styled.RightContainer>
+          <Styled.TitleTypo>FAQ</Styled.TitleTypo>
+          <Styled.Bar />
+        </Styled.RightContainer>
       </Styled.BodyContainer>
     </div>
   );

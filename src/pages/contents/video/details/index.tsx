@@ -97,10 +97,10 @@ const Pc = () => {
           </Styled.TagContainer>
         </Styled.LeftContainer>
         <Styled.RightContainer>
-          <Styled.TitleTypo>백사장에 누워있는 불가사리</Styled.TitleTypo>
+          <Styled.TitleTypo>{data?.title}</Styled.TitleTypo>
           <Styled.ProfileContainer>
             <Styled.ProfileImgSample />
-            <Styled.ProfileTypo>태닝탠잉</Styled.ProfileTypo>
+            <Styled.ProfileTypo>{data?.user.username}</Styled.ProfileTypo>
           </Styled.ProfileContainer>
           <Styled.InfoContainer>
             <Styled.InfoHeart />

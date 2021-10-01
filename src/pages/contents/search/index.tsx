@@ -1,5 +1,4 @@
 import { BreadCrumbs } from 'components/BreadCrumbs';
-import { ContentsCard } from 'components/Card/Contents';
 import React from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import * as Styled from 'styles/contents/search/styled';
@@ -61,7 +60,7 @@ const Pc = () => {
           <Styled.CategoryBar />
           <Styled.CategoryTypo>영상효과</Styled.CategoryTypo>
         </Styled.CategoryContainer>
-        <Styled.ContentsContainer>
+        {/* <Styled.ContentsContainer>
           <Styled.ContentsCardWrapper>
             <ContentsCard />
           </Styled.ContentsCardWrapper>
@@ -86,7 +85,7 @@ const Pc = () => {
           <Styled.ContentsCardWrapper>
             <ContentsCard />
           </Styled.ContentsCardWrapper>
-        </Styled.ContentsContainer>
+        </Styled.ContentsContainer> */}
       </Styled.Container>
     </div>
   );

@@ -29,7 +29,7 @@ const Pc = () => {
   };
 
   return (
-    <div onClick={onClick}>
+    <div>
       <BreadCrumbs content={['홈', '장바구니']} type="small" />
 
       <Styled.BodyContainer>
@@ -37,11 +37,7 @@ const Pc = () => {
           <Styled.MenuContainer>
             <Styled.MenuTitleTypo>상품구매</Styled.MenuTitleTypo>
             <Styled.MenuItemTypo style={{ marginTop: '20px' }}>
-              {' '}
-              <Styled.MenuItemTypoPoint>
-                {' '}
-                주문 관리{' '}
-              </Styled.MenuItemTypoPoint>{' '}
+              <Styled.MenuItemTypoPoint>주문 관리</Styled.MenuItemTypoPoint>
             </Styled.MenuItemTypo>
             <Styled.MenuItemTypo> 장바구니 </Styled.MenuItemTypo>
             <Styled.MenuItemTypo> 라이선스 안내 </Styled.MenuItemTypo>
@@ -49,7 +45,7 @@ const Pc = () => {
             <Styled.MenuItemTypo> 환불안내 </Styled.MenuItemTypo>
           </Styled.MenuContainer>
         </Styled.LeftContainer>
-        <Styled.RightContainer>
+        <Styled.RightContainer onClick={onClick}>
           <Styled.TitleTypo>장바구니</Styled.TitleTypo>
           <ProcessContainer step={step} />
           {step === 0 && <Step1 />}

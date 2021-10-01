@@ -22,7 +22,12 @@ export const BasketContentsCard: React.FC<Props> = ({
 
   return (
     <Styled.Root onClick={onClick}>
-      <Image src={thumbnail ?? sample} width="200px" height="128px" />
+      <Image
+        src={thumbnail ?? sample}
+        width="200px"
+        height="128px"
+        objectFit="contain"
+      />
     </Styled.Root>
   );
 };

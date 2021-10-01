@@ -67,3 +67,53 @@ export type ImageContentDetailResponse = {
   data: ImageContentDetailType;
   status: StatusType;
 };
+
+export type AudioContentDetailType = {
+  content_type: string;
+  created_at: string;
+  file_extension: string;
+  file_size: string;
+  has_commercial_rights: boolean;
+  has_global_rights: boolean;
+  has_no_extra_fee: boolean;
+  has_resell_rights: boolean;
+  id: string;
+  is_cart: boolean;
+  preview: string;
+  price: number;
+  recommends: ContentType[];
+  tags: Tag[];
+  title: string;
+  user: User;
+  thumbnail: string;
+};
+
+export type AudioContentDetailResponse = {
+  data: AudioContentDetailType;
+  status: StatusType;
+};
+
+export type VideoContentDetailType = {
+  content_type: string;
+  created_at: string;
+  file_extension: string;
+  file_size: string;
+  has_commercial_rights: boolean;
+  has_global_rights: boolean;
+  has_no_extra_fee: boolean;
+  has_resell_rights: boolean;
+  id: string;
+  is_cart: boolean;
+  preview: string;
+  price: number;
+  recommends: ContentType[];
+  tags: Tag[];
+  title: string;
+  user: User;
+  youtube_link: string;
+};
+
+export type VideoContentDetailResponse = {
+  data: VideoContentDetailType;
+  status: StatusType;
+};

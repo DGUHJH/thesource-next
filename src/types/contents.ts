@@ -32,6 +32,13 @@ export type ContentType = {
   title: string;
 };
 
+export type ContentsType = ContentType[];
+
+export type ContentsResponse = {
+  data: ContentsType;
+  status: StatusType;
+};
+
 export type PopularContentsType = {
   audios: ContentType[];
   images: ContentType[];

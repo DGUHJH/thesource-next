@@ -10,9 +10,16 @@ export const getVideoList = async (
   category?: string,
   keyword?: string
 ) => {
-  const url = keyword
-    ? `${requestUrl}/content/video/?page=${page}&category=${category}&keyword=${keyword}`
-    : `${requestUrl}/content/video/?page=${page}&category=${category}`;
+  let url = `${requestUrl}/content/video/?page=${page}`;
+
+  if (category) {
+    url += `&category=${category}`;
+  }
+
+  if (keyword) {
+    url += `&keyword=${keyword}`;
+  }
+
   return await hFetch(url, 'get', false);
 };
 
@@ -25,9 +32,15 @@ export const getImageList = async (
   category?: string,
   keyword?: string
 ) => {
-  const url = keyword
-    ? `${requestUrl}/content/image/?page=${page}&category=${category}&keyword=${keyword}`
-    : `${requestUrl}/content/image/?page=${page}&category=${category}`;
+  let url = `${requestUrl}/content/image/?page=${page}`;
+
+  if (category) {
+    url += `&category=${category}`;
+  }
+
+  if (keyword) {
+    url += `&keyword=${keyword}`;
+  }
 
   return await hFetch(url, 'get', false);
 };
@@ -41,9 +54,15 @@ export const getEffectList = async (
   category?: string,
   keyword?: string
 ) => {
-  const url = keyword
-    ? `${requestUrl}/content/effect/?page=${page}&category=${category}&keyword=${keyword}`
-    : `${requestUrl}/content/effect/?page=${page}&category=${category}`;
+  let url = `${requestUrl}/content/effect/?page=${page}`;
+
+  if (category) {
+    url += `&category=${category}`;
+  }
+
+  if (keyword) {
+    url += `&keyword=${keyword}`;
+  }
 
   return await hFetch(url, 'get', false);
 };
@@ -57,9 +76,15 @@ export const getAudioList = async (
   category?: string,
   keyword?: string
 ) => {
-  const url = keyword
-    ? `${requestUrl}/content/audio/?page=${page}&category=${category}&keyword=${keyword}`
-    : `${requestUrl}/content/audio/?page=${page}&category=${category}`;
+  let url = `${requestUrl}/content/audio/?page=${page}`;
+
+  if (category) {
+    url += `&category=${category}`;
+  }
+
+  if (keyword) {
+    url += `&keyword=${keyword}`;
+  }
 
   return await hFetch(url, 'get', false);
 };

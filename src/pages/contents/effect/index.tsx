@@ -1,7 +1,10 @@
+import { getEffectList } from 'api/contents/fetch';
 import { BreadCrumbs } from 'components/BreadCrumbs';
-import { PopularContainer } from 'components/Container/Popular';
+import { ContentsCard } from 'components/Card/Contents';
+import { useEffect, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
-import * as Styled from 'styles/styled';
+import * as Styled from 'styles/contents/effect/styled';
+import { ContentsResponse, ContentsType } from 'types/contents';
 
 const Main = () => {
   return (
@@ -17,10 +20,31 @@ const Main = () => {
 };
 
 const Pc = () => {
+  const [data, setData] = useState<ContentsType>();
+
+  useEffect(() => {
+    getEffectList(1).then((res: ContentsResponse) => {
+      if (res.status.type === 'success') {
+        setData(res.data);
+      }
+    });
+  }, []);
+
   return (
     <div>
-      <BreadCrumbs content={['홈', '영상효과']} />
-      <PopularContainer />
+      <BreadCrumbs content={['홈', '이미지']} />
+      <Styled.BodyContainer>
+        <Styled.LeftContainer>필터</Styled.LeftContainer>
+        <Styled.RightContainer>
+          {data?.map((content, index: number) => (
+            <Styled.ContentsCardWrapper
+              key={`audio_contents_card_wrapper_${index}`}
+            >
+              <ContentsCard {...content} />
+            </Styled.ContentsCardWrapper>
+          ))}
+        </Styled.RightContainer>
+      </Styled.BodyContainer>
     </div>
   );
 };

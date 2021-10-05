@@ -1,19 +1,50 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import * as Styled from './styled';
 
-export const Input = () => {
+type EditorDataType = {
+  email: string;
+  password: string;
+  passwordConfirm: string;
+};
+
+type Props = {
+  editorData: EditorDataType;
+  setEditorData: React.Dispatch<React.SetStateAction<EditorDataType>>;
+};
+
+export const Input: React.FC<Props> = ({ editorData, setEditorData }) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEditorData({
+      ...editorData,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  useEffect(() => {}, [editorData]);
+
   return (
     <Styled.Root>
-      <Styled.TitleTypo>약관동의</Styled.TitleTypo>
+      <Styled.TitleTypo>회원가입</Styled.TitleTypo>
       <Styled.Editor
+        id="email"
+        value={editorData.email}
+        onChange={onChange}
         variant="outlined"
         placeholder="사용할 이메일을 입력해 주세요."
       />
       <Styled.Editor
+        id="password"
+        type="password"
+        value={editorData.password}
+        onChange={onChange}
         variant="outlined"
         placeholder="비밀번호를 입력해 주세요."
       />
       <Styled.Editor
+        id="passwordConfirm"
+        type="password"
+        value={editorData.passwordConfirm}
+        onChange={onChange}
         variant="outlined"
         placeholder="비밀번호를 확인해 주세요."
       />

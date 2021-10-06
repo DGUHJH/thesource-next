@@ -7,7 +7,7 @@ const cart = cookies.get('cart');
 const cartId = cookies.get('cart_id');
 
 export const inputCart = async (data: any) => {
-  if (accessToken !== null && accessToken !== undefined && accessToken !== '') {
+  if (accessToken) {
     return await hFetch(`${requestUrl}/cart/`, 'post', true, data);
   } else {
     return await nonLoginInputCart(data);
@@ -23,7 +23,7 @@ export const nonLoginCart = async (data: any) => {
 };
 
 export const getCartList = async () => {
-  if (accessToken !== null && accessToken !== undefined && accessToken !== '') {
+  if (accessToken) {
     return await hFetch(`${requestUrl}/cart/`, 'get', true);
   } else {
     return await hFetch(`${requestUrl}/cart/?cart_id=${cartId}`, 'get', false);
@@ -31,7 +31,7 @@ export const getCartList = async () => {
 };
 
 export const delCart = async (data: any) => {
-  if (accessToken !== null && accessToken !== undefined && accessToken !== '') {
+  if (accessToken) {
     return await hFetch(`${requestUrl}/cart/bulk_delete/`, 'post', true, data);
   } else {
     return await nonLoginDelCart(data);

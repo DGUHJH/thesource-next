@@ -65,8 +65,9 @@ export const EventBottomContainer = styled(Box)`
 
 export const EventShoppingCart = styled(ShoppingCart)`
   &&& {
-    font-size: 18px;
+    font-size: 28px;
     color: white;
+    z-index: 2;
   }
 `;
 

@@ -1,3 +1,4 @@
+import { inputCart } from 'api/cart/fetch';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import React, { useState } from 'react';
@@ -23,8 +24,16 @@ export const ContentsCard: React.FC<ContentType> = ({
     setMouseOver(value);
   };
 
-  const onClick = () => {
-    router.push(`/contents/${content_type}/details/?id=${id}`);
+  const onClick = (value: number) => () => {
+    if (value === 0) {
+      router.push(`/contents/${content_type}/details/?id=${id}`);
+    } else if (value === 1) {
+      inputCart({ contents: [id] }).then((res) => {
+        if (res.status.type === 'success') {
+          alert('장바구니에 담아졌습니다!');
+        }
+      });
+    }
   };
 
   const contentType = () => {
@@ -43,16 +52,15 @@ export const ContentsCard: React.FC<ContentType> = ({
     <Styled.Root
       onMouseEnter={handleMouseOver(true)}
       onMouseLeave={handleMouseOver(false)}
-      onClick={onClick}
     >
       <Styled.ImageWrapper>
         <Image src={thumbnail} layout="fill" objectFit="cover" />
       </Styled.ImageWrapper>
       {mouseOver && (
-        <Styled.EventContainer>
+        <Styled.EventContainer onClick={onClick(0)}>
           <Styled.EventTopContainer>
             <Styled.EventTypo>{contentType()}</Styled.EventTypo>
-            <Styled.EventShoppingCart />
+            <Styled.EventShoppingCart onClick={onClick(1)} />
           </Styled.EventTopContainer>
           <Styled.EventBottomContainer>
             <Styled.EventTypo>

@@ -86,6 +86,7 @@ export const ContentsHeaderContainer = styled(Box)`
   height: 43px;
   background: #f1f1f1;
   display: flex;
+  border-bottom: 1px #e9e9e9 solid;
 `;
 
 export const ContentsHeaderLeftContainer = styled(Box)`
@@ -115,7 +116,6 @@ export const ContentsBodyContainer = styled(Box)`
   width: 100%;
   height: 135px;
   display: flex;
-  border-top: 1px #e9e9e9 solid;
   border-bottom: 1px #d9d9d9 solid;
 `;
 
@@ -228,7 +228,7 @@ export const PriceNumberTypo = styled(Typography)`
     font-weight: 400;
     font-size: 14px;
     color: #444;
-    margin-top: 2px;
+    margin-top: 5px;
   }
 `;
 
@@ -311,7 +311,7 @@ export const AgreeTypo = styled(Typography)`
 
 export const PurchaseContainer = styled(Box)`
   width: 100%;
-  height: 156px;
+  height: 117px;
   display: flex;
   flex-direction: column;
   margin-top: 40px;

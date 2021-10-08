@@ -40,3 +40,52 @@ export const Bar = styled(Box)`
   background: #e9e9e9;
   margin: 40px 0;
 `;
+
+export const FAQContainer = styled(Box)`
+  width: 909px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const FAQTitleTypo = styled(Typography)`
+  &&& {
+    font-family: NotoSans-Medium;
+    font-size: 16px;
+    color: #4b4b4b;
+  }
+`;
+
+export const FAQBodyContainer = styled(Box)`
+  width: 909px;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px #444 solid;
+  margin-top: 20px;
+  margin-bottom: 40px;
+`;
+
+export const FAQBodyTitleTypo = styled(Typography)`
+  &&& {
+    font-family: NotoSans-Medium;
+    font-size: 13px;
+    color: #555;
+  }
+`;
+
+export const FAQBodyContentTypo = styled(Typography)`
+  &&& {
+    font-family: NotoSans-Regular;
+    font-size: 12px;
+    color: #666;
+    padding: 0 13px;
+    box-sizing: border-box;
+    word-break: keep-all;
+    margin-bottom: 10px;
+  }
+`;
+
+export const FAQBodyContentTypoPoint = styled.span`
+  &&& {
+    font-family: NotoSans-Medium;
+  }
+`;

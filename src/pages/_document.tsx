@@ -31,7 +31,6 @@ export default class MyDocument extends Document {
           <meta name="description" content="디소스 - 메인 페이지" />
           <link rel="icon" href="/favicon.ico" />
           <meta property="og:url" content="https://thesource.co.kr/" />
-          <meta property="og:title" content="The Source (디소스)" />
           <meta property="og:type" content="website" />
           <meta
             property="og:image"

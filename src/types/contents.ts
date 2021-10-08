@@ -132,3 +132,15 @@ export type MainContentsResponse = {
   };
   status: StatusType;
 };
+
+export type SearchedContentsType = {
+  videos: ContentsType;
+  images: ContentsType;
+  audios: ContentsType;
+  effects: ContentsType;
+};
+
+export type SearchedContentsResponse = {
+  data: SearchedContentsType;
+  status: StatusType;
+};

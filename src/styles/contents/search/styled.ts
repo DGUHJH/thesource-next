@@ -78,11 +78,17 @@ export const CategoryContainer = styled(Box)`
   align-items: center;
 `;
 
+export const CategoryTypoWrapper = styled(Box)`
+  display: flex;
+  align-items: center;
+`;
+
 export const CategoryPointTypo = styled(Typography)`
   &&& {
     font-family: NotoSans-Black;
     font-size: 18px;
     color: #4ea5fc;
+    cursor: pointer;
   }
 `;
 
@@ -91,6 +97,7 @@ export const CategoryTypo = styled(Typography)`
     font-family: NotoSans-Light;
     font-size: 18px;
     color: #9e9e9e;
+    cursor: pointer;
   }
 `;
 

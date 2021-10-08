@@ -37,6 +37,22 @@ export const EditorContainer = styled(Box)`
   box-sizing: border-box;
 `;
 
+export const Editor = styled.input`
+  &&& {
+    width: 900px;
+    font-family: NotoSans-Regular;
+    font-size: 16px;
+    border: 0;
+    ::placeholder {
+      color: #c9c9c9;
+    }
+    :focus {
+      outline-width: 0;
+      color: #676767;
+    }
+  }
+`;
+
 export const EditorTypo = styled(Typography)`
   &&& {
     font-family: NotoSans-Regular;

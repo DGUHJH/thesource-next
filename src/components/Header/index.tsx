@@ -198,7 +198,6 @@ export const Header = () => {
         </Styled.BannerWrapper>
         <Styled.SearchBarWrapper
           style={router?.pathname === '/' ? { top: '270px' } : { top: '90px' }}
-          onClick={onMenuClick('/contents/search')}
         >
           <SearchBar />
         </Styled.SearchBarWrapper>

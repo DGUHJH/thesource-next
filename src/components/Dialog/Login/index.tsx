@@ -2,6 +2,7 @@ import { Dialog } from '@material-ui/core';
 import { loginFetch } from 'api/login/fetch';
 import { cookies } from 'api/methods/cookies';
 import { ReducerType } from 'features';
+import { joinDialogOpen } from 'features/join/joinDialogSlice';
 import {
   loginDialogClose,
   LoginDialogState,
@@ -16,6 +17,11 @@ export const LoginDialog: React.FC = () => {
   const router = useRouter();
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+
+  const onJoinButtonClick = () => {
+    dispatch(loginDialogClose());
+    dispatch(joinDialogOpen());
+  };
 
   const loginDialogData = useSelector<ReducerType, LoginDialogState>(
     (state) => state.loginDialog
@@ -80,7 +86,7 @@ export const LoginDialog: React.FC = () => {
           <Styled.JoinTypoBold> 다양한 콘텐츠들을 </Styled.JoinTypoBold> <br />
           <Styled.JoinTypoBold>이용</Styled.JoinTypoBold>하고 싶다면?
         </Styled.JoinTypo>
-        <Styled.JoinButton variant="outlined">
+        <Styled.JoinButton variant="outlined" onClick={onJoinButtonClick}>
           <Styled.JoinButtonTypo>회원가입 하기</Styled.JoinButtonTypo>
         </Styled.JoinButton>
         <Styled.CloseButton onClick={handleClose} />

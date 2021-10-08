@@ -1,4 +1,5 @@
 import { Badge } from '@material-ui/core';
+import { getCartList } from 'api/cart/fetch';
 import { getUserInfo } from 'api/login/fetch';
 import headerLogo from 'assets/images/header_logo.png';
 import mainBanner from 'assets/images/main_banner.png';
@@ -19,8 +20,9 @@ import {
 } from 'features/login/loginSlice';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { CartListType } from 'types/cart';
 import * as Styled from './styled';
 
 const contentMenu = [
@@ -56,6 +58,7 @@ export const Header = () => {
   const loginData = useSelector<ReducerType, LoginState>(
     (state) => state.login
   );
+  const [cartCount, setCartCount] = useState<number>(0);
 
   const handleLoginDialog = (value: boolean) => () => {
     if (value) {
@@ -115,6 +118,11 @@ export const Header = () => {
         console.log(res.status.message);
       }
     });
+    getCartList().then((res: CartListType) => {
+      if (res.status.type === 'success') {
+        setCartCount(res.data.cart_items?.length);
+      }
+    });
   }, []);
 
   return (
@@ -162,7 +170,7 @@ export const Header = () => {
               </Styled.RightMenuTypo>
               <Styled.RightMenuDivBar />
               <Badge
-                badgeContent={4}
+                badgeContent={cartCount}
                 color="secondary"
                 showZero
                 onClick={onMenuClick('/purchase')}

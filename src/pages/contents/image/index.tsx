@@ -12,6 +12,7 @@ const Main = () => {
     <Styled.Root>
       <Head>
         <title>디소스/이미지 리스트</title>
+        <meta property="og:title" content="디소스/이미지 리스트" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BrowserView>

@@ -21,6 +21,7 @@ const Main: React.FC<Props> = () => {
     <Styled.Root>
       <Head>
         <title>디소스/{title} 이미지</title>
+        <meta property="og:title" content={`디소스/${title} 이미지`} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BrowserView>

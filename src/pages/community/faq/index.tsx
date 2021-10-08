@@ -7,6 +7,7 @@ import { ExpandMore } from '@material-ui/icons';
 import FAQList from 'assets/json/faq.json';
 import { BreadCrumbs } from 'components/BreadCrumbs';
 import { CommunityMenuContainer } from 'components/Container/CommunityMenu';
+import Head from 'next/head';
 import React from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import * as Styled from 'styles/community/faq/styled';
@@ -14,6 +15,10 @@ import * as Styled from 'styles/community/faq/styled';
 const Main = () => {
   return (
     <Styled.Root>
+      <Head>
+        <title>디소스/FAQ</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <BrowserView>
         <Pc />
       </BrowserView>

@@ -1,6 +1,7 @@
 import pricePolicy from 'assets/images/price_policy.png';
 import { BreadCrumbs } from 'components/BreadCrumbs';
 import { CommunityMenuContainer } from 'components/Container/CommunityMenu';
+import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
@@ -9,6 +10,10 @@ import * as Styled from 'styles/community/price-policy/styled';
 const Main = () => {
   return (
     <Styled.Root>
+      <Head>
+        <title>디소스/가격 정책</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <BrowserView>
         <Pc />
       </BrowserView>

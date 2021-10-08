@@ -1,6 +1,7 @@
 import { getImageList } from 'api/contents/fetch';
 import { BreadCrumbs } from 'components/BreadCrumbs';
 import { ContentsCard } from 'components/Card/Contents';
+import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import * as Styled from 'styles/contents/image/styled';
@@ -9,6 +10,10 @@ import { ContentsResponse, ContentsType } from 'types/contents';
 const Main = () => {
   return (
     <Styled.Root>
+      <Head>
+        <title>디소스/이미지 리스트</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <BrowserView>
         <Pc />
       </BrowserView>

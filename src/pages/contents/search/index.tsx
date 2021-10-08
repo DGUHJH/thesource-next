@@ -2,14 +2,20 @@ import { getSearchList } from 'api/search/fetch';
 import { BreadCrumbs } from 'components/BreadCrumbs';
 import { ContentsCard } from 'components/Card/Contents';
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import * as Styled from 'styles/contents/search/styled';
 import { SearchedContentsResponse, SearchedContentsType } from 'types/contents';
 
 const Main = () => {
+  const { query }: any = useRouter();
   return (
     <Styled.Root>
+      <Head>
+        <title>디소스/'{query.searchWord}' 검색 결과</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <BrowserView>
         <Pc />
       </BrowserView>

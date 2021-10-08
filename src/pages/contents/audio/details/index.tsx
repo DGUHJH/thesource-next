@@ -4,8 +4,9 @@ import sample from 'assets/images/sample.png';
 import { BreadCrumbs } from 'components/BreadCrumbs';
 import { BasketContentsCard } from 'components/Card/BasketContents';
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 import { BrowserView, MobileView } from 'react-device-detect';
 import * as Styled from 'styles/contents/audio/details/styled';
@@ -15,15 +16,16 @@ import {
   ContentType,
 } from 'types/contents';
 
-type Props = {
-  id: string;
-};
-
-const Main: React.FC<Props> = ({ id }) => {
+const Main: React.FC = () => {
+  const [title, setTitle] = useState<string>('');
   return (
     <Styled.Root>
+      <Head>
+        <title>디소스/{title} 영상효과</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <BrowserView>
-        <Pc />
+        <Pc setTitle={setTitle} />
       </BrowserView>
       <MobileView>
         <Mobile />
@@ -32,7 +34,11 @@ const Main: React.FC<Props> = ({ id }) => {
   );
 };
 
-const Pc = () => {
+type Props = {
+  setTitle: Dispatch<SetStateAction<string>>;
+};
+
+const Pc: React.FC<Props> = ({ setTitle }) => {
   const [data, setData] = useState<AudioContentDetailType>();
   const { query }: any = useRouter();
 
@@ -41,6 +47,7 @@ const Pc = () => {
       getAudioDetail(query.id).then((res: AudioContentDetailResponse) => {
         if (res.status.type === 'success') {
           setData(res.data);
+          setTitle(res.data.title);
         }
       });
     }

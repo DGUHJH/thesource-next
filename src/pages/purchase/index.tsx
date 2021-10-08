@@ -19,6 +19,8 @@ const Main = () => {
   return (
     <Styled.Root>
       <Head>
+        <title>디소스/장바구니</title>
+        <link rel="icon" href="/favicon.ico" />
         <script
           type="text/javascript"
           src="https://code.jquery.com/jquery-1.12.4.min.js"

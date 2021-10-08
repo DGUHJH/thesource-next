@@ -1,4 +1,5 @@
 import { BreadCrumbs } from 'components/BreadCrumbs';
+import Head from 'next/head';
 import React from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import * as Styled from 'styles/purchase/styled';
@@ -6,6 +7,10 @@ import * as Styled from 'styles/purchase/styled';
 const Main = () => {
   return (
     <Styled.Root>
+      <Head>
+        <title>디소스/고객센터</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <BrowserView>
         <Pc />
       </BrowserView>

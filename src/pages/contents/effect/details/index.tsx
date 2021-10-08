@@ -2,19 +2,22 @@ import detailsBannerLicenseImage from 'assets/images/details_banner_license.png'
 import sampleCardImage from 'assets/images/sample_card_image.png';
 import { BreadCrumbs } from 'components/BreadCrumbs';
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
 import Image from 'next/image';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import * as Styled from 'styles/contents/effect/details/styled';
 
-type Props = {
-  id: string;
-};
-
-const Main: React.FC<Props> = ({ id }) => {
+const Main: React.FC = () => {
+  const [title, setTitle] = useState<string>('');
   return (
     <Styled.Root>
+      <Head>
+        <title>디소스/{title} 영상효과</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <BrowserView>
-        <Pc />
+        <Pc setTitle={setTitle} />
       </BrowserView>
       <MobileView>
         <Mobile />
@@ -23,7 +26,11 @@ const Main: React.FC<Props> = ({ id }) => {
   );
 };
 
-const Pc = () => {
+type Props = {
+  setTitle: Dispatch<SetStateAction<string>>;
+};
+
+const Pc: React.FC<Props> = ({ setTitle }) => {
   const router = useRouter();
   return (
     <div>

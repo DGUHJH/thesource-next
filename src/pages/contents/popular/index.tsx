@@ -1,6 +1,7 @@
 import { getPopularityList } from 'api/contents/fetch';
 import { BreadCrumbs } from 'components/BreadCrumbs';
 import { ContentsCard } from 'components/Card/Contents';
+import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import * as Styled from 'styles/contents/popular/styled';
@@ -9,6 +10,10 @@ import { PopularContentsResponse, PopularContentsType } from 'types/contents';
 const Main = () => {
   return (
     <Styled.Root>
+      <Head>
+        <title>디소스/인기콘텐츠</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <BrowserView>
         <Pc />
       </BrowserView>

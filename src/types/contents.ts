@@ -124,3 +124,11 @@ export type VideoContentDetailResponse = {
   data: VideoContentDetailType;
   status: StatusType;
 };
+
+export type MainContentsResponse = {
+  data: {
+    middle_swiper: ContentsType;
+    popularity_swiper: ContentsType;
+  };
+  status: StatusType;
+};

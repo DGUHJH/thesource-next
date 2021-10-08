@@ -8,9 +8,9 @@ import styled from 'styled-components';
 
 export const Root = styled(Box)`
   width: 277px;
+  min-width: 277px;
   height: 244px;
   border-radius: 5px;
-  background: #f003;
   margin-right: 20px;
   position: relative;
   cursor: pointer;
@@ -65,8 +65,10 @@ export const EventBottomContainer = styled(Box)`
 
 export const EventShoppingCart = styled(ShoppingCart)`
   &&& {
-    font-size: 18px;
+    font-size: 28px;
     color: white;
+    z-index: 2;
+    position: relative;
   }
 `;
 

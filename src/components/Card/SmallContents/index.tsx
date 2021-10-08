@@ -1,10 +1,22 @@
-import sampleCardImage from 'assets/images/sample_card_image.png';
+import { inputCart } from 'api/cart/fetch';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { ContentType } from 'types/contents';
 import * as Styled from './styled';
 
-export const SmallContentsCard = () => {
+export const SmallContentsCard: React.FC<ContentType> = ({
+  categories,
+  content_type,
+  created_at,
+  has_download,
+  id,
+  preview,
+  price,
+  tags,
+  thumbnail,
+  title,
+}) => {
   const [mouseOver, setMouseOver] = useState(false);
   const router = useRouter();
 
@@ -12,27 +24,55 @@ export const SmallContentsCard = () => {
     setMouseOver(value);
   };
 
-  const onClick = () => {
-    router.push('/contents/image/details');
+  const onClick = (value: number) => () => {
+    if (value === 0) {
+      router.push(`/contents/${content_type}/details/?id=${id}`);
+    } else if (value === 1) {
+      inputCart({ contents: [id] }).then((res) => {
+        if (res.status.type === 'success') {
+          alert('장바구니에 담아졌습니다!');
+        }
+      });
+    }
+  };
+
+  const contentType = () => {
+    if (content_type === 'audio') {
+      return '음원소스';
+    } else if (content_type === 'effect') {
+      return '영상효과';
+    } else if (content_type === 'image') {
+      return '이미지';
+    } else if (content_type === 'video') {
+      return '영상클립';
+    }
   };
 
   return (
     <Styled.Root
       onMouseEnter={handleMouseOver(true)}
       onMouseLeave={handleMouseOver(false)}
-      onClick={onClick}
     >
       <Styled.SampleImage>
-        <Image src={sampleCardImage} layout="responsive" />
+        <Image src={thumbnail} layout="fill" objectFit="cover" />
       </Styled.SampleImage>
       {mouseOver && (
-        <Styled.EventContainer>
+        <Styled.EventContainer onClick={onClick(0)}>
           <Styled.EventTopContainer>
-            <Styled.EventTypo>영상효과</Styled.EventTypo>
-            <Styled.EventShoppingCart />
+            <Styled.EventTypo>{contentType()}</Styled.EventTypo>
+            <Styled.EventShoppingCart onClick={onClick(1)} />
           </Styled.EventTopContainer>
           <Styled.EventBottomContainer>
-            <Styled.EventTypo>#로고 #애니메이션</Styled.EventTypo>
+            <Styled.EventTypo>
+              {tags.map(
+                (tag, index: number) =>
+                  index < 2 && (
+                    <span key={`contents_card_${id}_${index}`}>
+                      #{tag.name}&nbsp;
+                    </span>
+                  )
+              )}
+            </Styled.EventTypo>
             <Styled.EventBottomItemContainer>
               <Styled.EventHeart />
               <Styled.EventBookmark />

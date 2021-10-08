@@ -34,13 +34,12 @@ export const IconMenuLeftContainer = styled(Box)`
 `;
 
 export const IconMenuWrapper = styled(Box)`
-  width: 76px;
-  height: 66px;
+  width: 90px;
   cursor: pointer;
 `;
 
 export const IconMenuBarWrapper = styled(Box)`
-  width: 61px;
+  width: 110px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -75,5 +74,58 @@ export const IconMenuRightJoinButtonTypo = styled(Typography)`
     font-family: NotoSans-Medium;
     font-size: 12px;
     color: #4ea5fc;
+  }
+`;
+
+export const BestContentContainer = styled(Box)`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+`;
+
+export const BestContentTitleWrapper = styled(Box)`
+  padding-left: 60px;
+  box-sizing: border-box;
+`;
+
+export const BestContentTitleTypo = styled(Typography)`
+  &&& {
+    font-family: Roboto;
+    font-size: 30px;
+    color: black;
+  }
+`;
+
+export const BestContentTitleTypoBold = styled.span`
+  font-weight: 800;
+`;
+
+export const BestContentTitleTypoLight = styled.span`
+  font-weight: 300;
+`;
+
+export const BestContentListContainer = styled(Box)`
+  &&& {
+    width: 100%;
+    background: #ededed;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 20px 0;
+    padding-left: 60px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    overflow-x: scroll;
+  }
+`;
+
+export const BestContentListSample = styled(Box)`
+  &&& {
+    width: 277px;
+    height: 244px;
+    border-radius: 4px;
+    background: #0003;
+    margin-right: 30px;
+    box-sizing: initial;
   }
 `;

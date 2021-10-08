@@ -64,11 +64,14 @@ export const ContentsCard: React.FC<ContentType> = ({
           </Styled.EventTopContainer>
           <Styled.EventBottomContainer>
             <Styled.EventTypo>
-              {tags.map((tag, index: number) => (
-                <span key={`contents_card_${id}_${index}`}>
-                  #{tag.name}&nbsp;
-                </span>
-              ))}
+              {tags.map(
+                (tag, index: number) =>
+                  index < 2 && (
+                    <span key={`contents_card_${id}_${index}`}>
+                      #{tag.name}&nbsp;
+                    </span>
+                  )
+              )}
             </Styled.EventTypo>
             <Styled.EventBottomItemContainer>
               <Styled.EventHeart />

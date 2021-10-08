@@ -9,6 +9,7 @@ import { ProcessContainer } from 'components/Container/Process/index';
 import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
 import Image from 'next/image';
+import Script from 'next/script';
 import React, { useEffect, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import * as Styled from 'styles/purchase/styled';
@@ -21,15 +22,15 @@ const Main = () => {
       <Head>
         <title>디소스/장바구니</title>
         <link rel="icon" href="/favicon.ico" />
-        <script
-          type="text/javascript"
-          src="https://code.jquery.com/jquery-1.12.4.min.js"
-        ></script>
-        <script
-          type="text/javascript"
-          src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"
-        ></script>
       </Head>
+      <Script
+        type="text/javascript"
+        src="https://code.jquery.com/jquery-1.12.4.min.js"
+      ></Script>
+      <Script
+        type="text/javascript"
+        src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"
+      ></Script>
       <BrowserView>
         <Pc />
       </BrowserView>

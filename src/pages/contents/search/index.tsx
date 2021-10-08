@@ -13,7 +13,7 @@ const Main = () => {
   return (
     <Styled.Root>
       <Head>
-        <title>디소스/'{query.searchWord}' 검색 결과</title>
+        <title>디소스/&apos;{query.searchWord}&apos; 검색 결과</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BrowserView>
@@ -90,22 +90,17 @@ const Pc = () => {
       <Styled.Container>
         <Styled.CategoryContainer>
           {Object.keys(selectList).map((value, index: number) => (
-            <Styled.CategoryTypoWrapper>
+            <Styled.CategoryTypoWrapper key={`category_type_wrapper_${index}`}>
               {select !== value ? (
-                <Styled.CategoryTypo
-                  key={`category_type_${index}`}
-                  onClick={onSelectChange(value)}
-                >
+                <Styled.CategoryTypo onClick={onSelectChange(value)}>
                   {selectList[value]}
                 </Styled.CategoryTypo>
               ) : (
-                <Styled.CategoryPointTypo key={`category_point_type_${index}`}>
+                <Styled.CategoryPointTypo>
                   {selectList[value]}
                 </Styled.CategoryPointTypo>
               )}
-              {index !== 4 && (
-                <Styled.CategoryBar key={`category_bar_${index}`} />
-              )}
+              {index !== 4 && <Styled.CategoryBar />}
             </Styled.CategoryTypoWrapper>
           ))}
         </Styled.CategoryContainer>

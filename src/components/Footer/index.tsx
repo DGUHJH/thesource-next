@@ -1,27 +1,33 @@
+import { useRouter } from 'next/dist/client/router';
 import React from 'react';
 import * as Styled from './styled';
 
 const MenuList = [
   {
     label: '이용약관',
-    url: '',
+    url: '/policy/terms',
   },
   {
     label: '개인정보 보호방침',
-    url: '',
+    url: '/policy/privacy',
   },
   {
     label: '저작권 정책',
-    url: '',
+    url: '/policy/copyright',
   },
 ];
 
 export const Footer = () => {
+  const router = useRouter();
+
   return (
     <Styled.Root>
       <Styled.MenuContainer>
         {MenuList.map((value, index) => (
-          <Styled.MenuTypo key={`footer_menu_typo_${index}`}>
+          <Styled.MenuTypo
+            onClick={() => router.push(value.url)}
+            key={`footer_menu_typo_${index}`}
+          >
             {value.label}
           </Styled.MenuTypo>
         ))}

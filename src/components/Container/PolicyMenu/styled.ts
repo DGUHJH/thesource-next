@@ -22,7 +22,7 @@ export const MenuTypo = styled(Typography)`
   &&& {
     font-family: NotoSans-Regular;
     font-size: 12px;
-    color: #444;
+    color: #999;
     cursor: pointer;
     margin-top: 5px;
   }

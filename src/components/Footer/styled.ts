@@ -25,6 +25,7 @@ export const MenuTypo = styled(Typography)`
     font-size: 14px;
     color: #868686;
     margin-right: 60px;
+    cursor: pointer;
   }
 `;
 

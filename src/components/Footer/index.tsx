@@ -3,18 +3,6 @@ import * as Styled from './styled';
 
 const MenuList = [
   {
-    label: '회사소개',
-    url: '',
-  },
-  {
-    label: '채용',
-    url: '',
-  },
-  {
-    label: '언론/미디어',
-    url: '',
-  },
-  {
     label: '이용약관',
     url: '',
   },
